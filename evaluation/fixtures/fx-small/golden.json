@@ -1,0 +1,226 @@
+{
+  "schema_version": "1.0.0",
+  "label_status": "PROVISIONAL_HUMAN_REVIEW_REQUIRED",
+  "language_profile": {
+    "repository_type": "SINGLE_LANGUAGE",
+    "primary_language": "Python",
+    "extractor_status": {"Python": "SUPPORTED"},
+    "files": [
+      {"path": "app/__init__.py", "language": "Python", "is_generated": false, "is_vendored": false},
+      {"path": "app/main.py", "language": "Python", "is_generated": false, "is_vendored": false},
+      {"path": "app/models.py", "language": "Python", "is_generated": false, "is_vendored": false},
+      {"path": "app/service.py", "language": "Python", "is_generated": false, "is_vendored": false},
+      {"path": "tests/test_service.py", "language": "Python", "is_generated": false, "is_vendored": false}
+    ]
+  },
+  "symbols": [
+    {
+      "qualified_name": "app",
+      "type": "MODULE",
+      "path": "app/__init__.py",
+      "start_line": 1,
+      "end_line": 3
+    },
+    {
+      "qualified_name": "app.main",
+      "type": "MODULE",
+      "path": "app/main.py",
+      "start_line": 1,
+      "end_line": 13
+    },
+    {
+      "qualified_name": "app.main.DEFAULT_PAGE_SIZE",
+      "type": "CONSTANT",
+      "path": "app/main.py",
+      "start_line": 4,
+      "end_line": 4
+    },
+    {
+      "qualified_name": "app.main.create_service",
+      "type": "FUNCTION",
+      "path": "app/main.py",
+      "start_line": 7,
+      "end_line": 8
+    },
+    {
+      "qualified_name": "app.main.list_customer_names",
+      "type": "FUNCTION",
+      "path": "app/main.py",
+      "start_line": 11,
+      "end_line": 13
+    },
+    {
+      "qualified_name": "app.models",
+      "type": "MODULE",
+      "path": "app/models.py",
+      "start_line": 1,
+      "end_line": 7
+    },
+    {
+      "qualified_name": "app.models.Customer",
+      "type": "CLASS",
+      "path": "app/models.py",
+      "start_line": 5,
+      "end_line": 7
+    },
+    {
+      "qualified_name": "app.service",
+      "type": "MODULE",
+      "path": "app/service.py",
+      "start_line": 1,
+      "end_line": 12
+    },
+    {
+      "qualified_name": "app.service.CustomerService",
+      "type": "CLASS",
+      "path": "app/service.py",
+      "start_line": 4,
+      "end_line": 12
+    },
+    {
+      "qualified_name": "app.service.CustomerService.list_customers",
+      "type": "METHOD",
+      "path": "app/service.py",
+      "start_line": 5,
+      "end_line": 6
+    },
+    {
+      "qualified_name": "app.service.CustomerService.get_customer",
+      "type": "METHOD",
+      "path": "app/service.py",
+      "start_line": 8,
+      "end_line": 12
+    },
+    {
+      "qualified_name": "tests.test_service",
+      "type": "MODULE",
+      "path": "tests/test_service.py",
+      "start_line": 1,
+      "end_line": 6
+    },
+    {
+      "qualified_name": "tests.test_service.test_lists_customers",
+      "type": "FUNCTION",
+      "path": "tests/test_service.py",
+      "start_line": 4,
+      "end_line": 6
+    }
+  ],
+  "imports": [
+    {
+      "source_unit": "app",
+      "imported_name": "app.service.CustomerService",
+      "alias": null,
+      "path": "app/__init__.py",
+      "line": 1,
+      "type_checking": false
+    },
+    {
+      "source_unit": "app.main",
+      "imported_name": "app.service.CustomerService",
+      "alias": null,
+      "path": "app/main.py",
+      "line": 1,
+      "type_checking": false
+    },
+    {
+      "source_unit": "app.models",
+      "imported_name": "dataclasses.dataclass",
+      "alias": null,
+      "path": "app/models.py",
+      "line": 1,
+      "type_checking": false
+    },
+    {
+      "source_unit": "app.service",
+      "imported_name": "app.models.Customer",
+      "alias": null,
+      "path": "app/service.py",
+      "line": 1,
+      "type_checking": false
+    },
+    {
+      "source_unit": "tests.test_service",
+      "imported_name": "app.service.CustomerService",
+      "alias": null,
+      "path": "tests/test_service.py",
+      "line": 1,
+      "type_checking": false
+    }
+  ],
+  "routes": [],
+  "exposes": [
+    {
+      "source_unit": "app",
+      "target": "app.service.CustomerService",
+      "path": "app/__init__.py",
+      "line": 3
+    }
+  ],
+  "questions": [
+    {
+      "id": "small-definition",
+      "question": "Where is CustomerService defined?",
+      "query_class": "EXACT_SYMBOL",
+      "answerable": true,
+      "required_slots": [
+        "unique_target"
+      ],
+      "essential_claims": [
+        "CustomerService is defined in app/service.py at line 4."
+      ],
+      "optional_claims": [],
+      "expected_resources": [
+        "app/service.py"
+      ]
+    },
+    {
+      "id": "small-importers",
+      "question": "Which files import CustomerService?",
+      "query_class": "STRUCTURAL",
+      "answerable": true,
+      "required_slots": [
+        "unique_target",
+        "import_edges"
+      ],
+      "essential_claims": [
+        "app/__init__.py, app/main.py, and tests/test_service.py import CustomerService."
+      ],
+      "optional_claims": [],
+      "expected_resources": [
+        "app/__init__.py",
+        "app/main.py",
+        "tests/test_service.py"
+      ]
+    },
+    {
+      "id": "small-functions-in-module",
+      "question": "Which functions exist in module app.main?",
+      "query_class": "GENERAL_STRUCTURAL",
+      "answerable": true,
+      "required_slots": [
+        "unique_module",
+        "function_symbols"
+      ],
+      "essential_claims": [
+        "create_service and list_customer_names are functions in app.main."
+      ],
+      "optional_claims": [],
+      "expected_resources": [
+        "app/main.py"
+      ]
+    },
+    {
+      "id": "small-history",
+      "question": "Why did the team choose Python?",
+      "query_class": "UNSUPPORTED",
+      "answerable": false,
+      "required_slots": [
+        "recorded_decision"
+      ],
+      "essential_claims": [],
+      "optional_claims": [],
+      "expected_resources": []
+    }
+  ]
+}

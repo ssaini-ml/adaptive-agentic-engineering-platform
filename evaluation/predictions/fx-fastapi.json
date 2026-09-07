@@ -1,0 +1,299 @@
+{
+  "extractor": {
+    "name": "python-ast",
+    "version": "1.0.0",
+    "status": "SUPPORTED"
+  },
+  "symbols": [
+    {
+      "qualified_name": "app",
+      "type": "MODULE",
+      "path": "app/__init__.py",
+      "start_line": 1,
+      "end_line": 1
+    },
+    {
+      "qualified_name": "app.api",
+      "type": "MODULE",
+      "path": "app/api/__init__.py",
+      "start_line": 1,
+      "end_line": 1
+    },
+    {
+      "qualified_name": "app.api.customers",
+      "type": "MODULE",
+      "path": "app/api/customers.py",
+      "start_line": 1,
+      "end_line": 26
+    },
+    {
+      "qualified_name": "app.api.customers.list_customers",
+      "type": "FUNCTION",
+      "path": "app/api/customers.py",
+      "start_line": 12,
+      "end_line": 15
+    },
+    {
+      "qualified_name": "app.api.customers.GET /customers/",
+      "type": "ROUTE",
+      "path": "app/api/customers.py",
+      "start_line": 11,
+      "end_line": 15
+    },
+    {
+      "qualified_name": "app.api.customers.get_customer",
+      "type": "FUNCTION",
+      "path": "app/api/customers.py",
+      "start_line": 19,
+      "end_line": 26
+    },
+    {
+      "qualified_name": "app.api.customers.GET /customers/{customer_id}",
+      "type": "ROUTE",
+      "path": "app/api/customers.py",
+      "start_line": 18,
+      "end_line": 26
+    },
+    {
+      "qualified_name": "app.dependencies",
+      "type": "MODULE",
+      "path": "app/dependencies.py",
+      "start_line": 1,
+      "end_line": 5
+    },
+    {
+      "qualified_name": "app.dependencies.get_customer_service",
+      "type": "FUNCTION",
+      "path": "app/dependencies.py",
+      "start_line": 4,
+      "end_line": 5
+    },
+    {
+      "qualified_name": "app.main",
+      "type": "MODULE",
+      "path": "app/main.py",
+      "start_line": 1,
+      "end_line": 7
+    },
+    {
+      "qualified_name": "app.models",
+      "type": "MODULE",
+      "path": "app/models.py",
+      "start_line": 1,
+      "end_line": 6
+    },
+    {
+      "qualified_name": "app.models.Customer",
+      "type": "CLASS",
+      "path": "app/models.py",
+      "start_line": 4,
+      "end_line": 6
+    },
+    {
+      "qualified_name": "app.services",
+      "type": "MODULE",
+      "path": "app/services/__init__.py",
+      "start_line": 1,
+      "end_line": 3
+    },
+    {
+      "qualified_name": "app.services.customer",
+      "type": "MODULE",
+      "path": "app/services/customer.py",
+      "start_line": 1,
+      "end_line": 12
+    },
+    {
+      "qualified_name": "app.services.customer.CustomerService",
+      "type": "CLASS",
+      "path": "app/services/customer.py",
+      "start_line": 4,
+      "end_line": 12
+    },
+    {
+      "qualified_name": "app.services.customer.CustomerService.list_customers",
+      "type": "METHOD",
+      "path": "app/services/customer.py",
+      "start_line": 5,
+      "end_line": 6
+    },
+    {
+      "qualified_name": "app.services.customer.CustomerService.get_customer",
+      "type": "METHOD",
+      "path": "app/services/customer.py",
+      "start_line": 8,
+      "end_line": 12
+    },
+    {
+      "qualified_name": "tests.test_customers",
+      "type": "MODULE",
+      "path": "tests/test_customers.py",
+      "start_line": 1,
+      "end_line": 10
+    },
+    {
+      "qualified_name": "tests.test_customers.test_list_customers",
+      "type": "FUNCTION",
+      "path": "tests/test_customers.py",
+      "start_line": 5,
+      "end_line": 6
+    },
+    {
+      "qualified_name": "tests.test_customers.test_get_customer",
+      "type": "FUNCTION",
+      "path": "tests/test_customers.py",
+      "start_line": 9,
+      "end_line": 10
+    }
+  ],
+  "imports": [
+    {
+      "source_unit": "app.api.customers",
+      "imported_name": "fastapi.APIRouter",
+      "alias": null,
+      "path": "app/api/customers.py",
+      "line": 1,
+      "type_checking": false
+    },
+    {
+      "source_unit": "app.api.customers",
+      "imported_name": "fastapi.Depends",
+      "alias": null,
+      "path": "app/api/customers.py",
+      "line": 1,
+      "type_checking": false
+    },
+    {
+      "source_unit": "app.api.customers",
+      "imported_name": "app.dependencies.get_customer_service",
+      "alias": null,
+      "path": "app/api/customers.py",
+      "line": 3,
+      "type_checking": false
+    },
+    {
+      "source_unit": "app.api.customers",
+      "imported_name": "app.models.Customer",
+      "alias": null,
+      "path": "app/api/customers.py",
+      "line": 4,
+      "type_checking": false
+    },
+    {
+      "source_unit": "app.api.customers",
+      "imported_name": "app.services.customer.CustomerService",
+      "alias": null,
+      "path": "app/api/customers.py",
+      "line": 5,
+      "type_checking": false
+    },
+    {
+      "source_unit": "app.dependencies",
+      "imported_name": "app.services.customer.CustomerService",
+      "alias": null,
+      "path": "app/dependencies.py",
+      "line": 1,
+      "type_checking": false
+    },
+    {
+      "source_unit": "app.main",
+      "imported_name": "fastapi.FastAPI",
+      "alias": null,
+      "path": "app/main.py",
+      "line": 1,
+      "type_checking": false
+    },
+    {
+      "source_unit": "app.main",
+      "imported_name": "app.api.customers.router",
+      "alias": "customer_router",
+      "path": "app/main.py",
+      "line": 3,
+      "type_checking": false
+    },
+    {
+      "source_unit": "app.models",
+      "imported_name": "pydantic.BaseModel",
+      "alias": null,
+      "path": "app/models.py",
+      "line": 1,
+      "type_checking": false
+    },
+    {
+      "source_unit": "app.services",
+      "imported_name": "app.services.customer.CustomerService",
+      "alias": null,
+      "path": "app/services/__init__.py",
+      "line": 1,
+      "type_checking": false
+    },
+    {
+      "source_unit": "app.services.customer",
+      "imported_name": "app.models.Customer",
+      "alias": null,
+      "path": "app/services/customer.py",
+      "line": 1,
+      "type_checking": false
+    },
+    {
+      "source_unit": "tests.test_customers",
+      "imported_name": "app.api.customers.get_customer",
+      "alias": null,
+      "path": "tests/test_customers.py",
+      "line": 1,
+      "type_checking": false
+    },
+    {
+      "source_unit": "tests.test_customers",
+      "imported_name": "app.api.customers.list_customers",
+      "alias": null,
+      "path": "tests/test_customers.py",
+      "line": 1,
+      "type_checking": false
+    },
+    {
+      "source_unit": "tests.test_customers",
+      "imported_name": "app.services.customer.CustomerService",
+      "alias": null,
+      "path": "tests/test_customers.py",
+      "line": 2,
+      "type_checking": false
+    }
+  ],
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/customers/",
+      "handler": "app.api.customers.list_customers",
+      "source_path": "app/api/customers.py",
+      "decorator_line": 11,
+      "handler_line": 12
+    },
+    {
+      "method": "GET",
+      "path": "/customers/{customer_id}",
+      "handler": "app.api.customers.get_customer",
+      "source_path": "app/api/customers.py",
+      "decorator_line": 18,
+      "handler_line": 19
+    }
+  ],
+  "exposes": [
+    {
+      "source_unit": "app.services",
+      "target": "app.services.customer.CustomerService",
+      "path": "app/services/__init__.py",
+      "line": 3
+    }
+  ],
+  "unresolved": [],
+  "inherits": [
+    {
+      "source": "app.models.Customer",
+      "target": "pydantic.BaseModel",
+      "path": "app/models.py",
+      "line": 4
+    }
+  ],
+  "diagnostics": []
+}

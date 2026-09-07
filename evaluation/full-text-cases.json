@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0.0",
+  "label_status": "PENDING_HUMAN_REVIEW",
+  "cases": [
+    {
+      "id": "fx-small-python-constant",
+      "fixture": "fx-small",
+      "query": "DEFAULT_PAGE_SIZE",
+      "filters": {"language": "Python", "categories": ["SOURCE"]},
+      "expected_paths": ["app/main.py"]
+    },
+    {
+      "id": "fx-fastapi-router-wiring",
+      "fixture": "fx-fastapi",
+      "query": "include_router customer_router",
+      "filters": {"document_types": ["MODULE"]},
+      "expected_paths": ["app/main.py"]
+    },
+    {
+      "id": "fx-messy-dynamic-import",
+      "fixture": "fx-messy",
+      "query": "import_module module_name",
+      "filters": {"file_path": "package/dynamic.py"},
+      "expected_paths": ["package/dynamic.py"]
+    },
+    {
+      "id": "fx-polyglot-typescript",
+      "fixture": "fx-polyglot",
+      "query": "health request failed",
+      "filters": {"language": "TypeScript"},
+      "expected_paths": ["web/app.ts"]
+    },
+    {
+      "id": "fx-polyglot-go",
+      "fixture": "fx-polyglot",
+      "query": "repository tool",
+      "filters": {"language": "Go"},
+      "expected_paths": ["tools/main.go"]
+    },
+    {
+      "id": "fx-fastapi-documentation",
+      "fixture": "fx-fastapi",
+      "query": "dependency injection services tests",
+      "filters": {"categories": ["DOCUMENTATION"]},
+      "expected_paths": ["README.md"]
+    }
+  ],
+  "excluded_queries": [
+    {
+      "id": "generated-typescript-excluded",
+      "fixture": "fx-polyglot",
+      "query": "generatedClientVersion"
+    },
+    {
+      "id": "vendored-go-excluded",
+      "fixture": "fx-polyglot",
+      "query": "vendored fixture Helper"
+    }
+  ]
+}

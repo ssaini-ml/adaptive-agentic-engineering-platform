@@ -1,0 +1,209 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-09-05T20:15:35.351794+00:00",
+  "milestone": "M2A_LANGUAGE_PROFILING",
+  "technical_status": "PASS",
+  "human_label_review": "PENDING_HUMAN_REVIEW",
+  "fixtures": [
+    {
+      "fixture_id": "fx-fastapi",
+      "expected": {
+        "repository_type": "SINGLE_LANGUAGE",
+        "primary_language": "Python",
+        "extractor_status": {
+          "Python": "SUPPORTED"
+        }
+      },
+      "actual": {
+        "repository_type": "SINGLE_LANGUAGE",
+        "primary_language": "Python",
+        "extractor_status": {
+          "Python": "SUPPORTED"
+        }
+      },
+      "language_files": {
+        "true_positive": 9,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "classification": {
+        "true_positive": 9,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "primary_language_correct": true,
+      "repository_type_correct": true,
+      "extractor_routing_correct": true,
+      "unsupported_reporting": {
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      }
+    },
+    {
+      "fixture_id": "fx-messy",
+      "expected": {
+        "repository_type": "SINGLE_LANGUAGE",
+        "primary_language": "Python",
+        "extractor_status": {
+          "Python": "SUPPORTED"
+        }
+      },
+      "actual": {
+        "repository_type": "SINGLE_LANGUAGE",
+        "primary_language": "Python",
+        "extractor_status": {
+          "Python": "SUPPORTED"
+        }
+      },
+      "language_files": {
+        "true_positive": 9,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "classification": {
+        "true_positive": 9,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "primary_language_correct": true,
+      "repository_type_correct": true,
+      "extractor_routing_correct": true,
+      "unsupported_reporting": {
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      }
+    },
+    {
+      "fixture_id": "fx-polyglot",
+      "expected": {
+        "repository_type": "POLYGLOT",
+        "primary_language": "TypeScript",
+        "extractor_status": {
+          "Python": "SUPPORTED",
+          "TypeScript": "UNSUPPORTED",
+          "Go": "UNSUPPORTED"
+        }
+      },
+      "actual": {
+        "repository_type": "POLYGLOT",
+        "primary_language": "TypeScript",
+        "extractor_status": {
+          "Go": "UNSUPPORTED",
+          "Python": "SUPPORTED",
+          "TypeScript": "UNSUPPORTED"
+        }
+      },
+      "language_files": {
+        "true_positive": 5,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "classification": {
+        "true_positive": 5,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "primary_language_correct": true,
+      "repository_type_correct": true,
+      "extractor_routing_correct": true,
+      "unsupported_reporting": {
+        "true_positive": 2,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      }
+    },
+    {
+      "fixture_id": "fx-small",
+      "expected": {
+        "repository_type": "SINGLE_LANGUAGE",
+        "primary_language": "Python",
+        "extractor_status": {
+          "Python": "SUPPORTED"
+        }
+      },
+      "actual": {
+        "repository_type": "SINGLE_LANGUAGE",
+        "primary_language": "Python",
+        "extractor_status": {
+          "Python": "SUPPORTED"
+        }
+      },
+      "language_files": {
+        "true_positive": 5,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "classification": {
+        "true_positive": 5,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "primary_language_correct": true,
+      "repository_type_correct": true,
+      "extractor_routing_correct": true,
+      "unsupported_reporting": {
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      }
+    }
+  ],
+  "gates": {
+    "language_file_precision": {
+      "value": 1.0,
+      "threshold": 0.99,
+      "passed": true
+    },
+    "language_file_recall": {
+      "value": 1.0,
+      "threshold": 0.99,
+      "passed": true
+    },
+    "primary_language_accuracy": {
+      "value": 1.0,
+      "threshold": 1.0,
+      "passed": true
+    },
+    "repository_type_accuracy": {
+      "value": 1.0,
+      "threshold": 1.0,
+      "passed": true
+    },
+    "extractor_routing_accuracy": {
+      "value": 1.0,
+      "threshold": 1.0,
+      "passed": true
+    },
+    "unsupported_language_reporting_recall": {
+      "value": 1.0,
+      "threshold": 1.0,
+      "passed": true
+    }
+  }
+}

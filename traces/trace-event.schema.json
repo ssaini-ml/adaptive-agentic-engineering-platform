@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://adaptive-platform.local/schemas/trace-event-v1.json",
+  "title": "Adaptive platform trace event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "schema_version",
+    "task_id",
+    "category",
+    "event_type",
+    "actor_type",
+    "occurred_at",
+    "summary",
+    "metadata"
+  ],
+  "properties": {
+    "id": {"type": "string", "format": "uuid"},
+    "schema_version": {"const": "1.0.0"},
+    "task_id": {"type": "string", "minLength": 1},
+    "repository_id": {"type": ["string", "null"]},
+    "scan_id": {"type": ["string", "null"]},
+    "correlation_id": {"type": ["string", "null"]},
+    "parent_event_id": {"type": ["string", "null"]},
+    "correction_of": {"type": ["string", "null"]},
+    "category": {
+      "enum": [
+        "REPOSITORY",
+        "RETRIEVAL",
+        "DECISION",
+        "EXECUTION",
+        "VERIFICATION",
+        "MODEL_INTERACTION",
+        "HUMAN_FEEDBACK",
+        "LEARNING"
+      ]
+    },
+    "event_type": {"type": "string", "minLength": 1},
+    "actor_type": {"enum": ["SYSTEM", "MODEL", "HUMAN"]},
+    "occurred_at": {"type": "string", "format": "date-time"},
+    "summary": {"type": "string", "minLength": 1},
+    "rationale_summary": {"type": ["string", "null"]},
+    "input_refs": {"type": "array", "items": {"type": "string"}},
+    "output_refs": {"type": "array", "items": {"type": "string"}},
+    "metadata": {"type": "object"}
+  }
+}
+

@@ -1,0 +1,14 @@
+{
+  "fixture_id": "fx-polyglot",
+  "fixture_version": "1.0.0",
+  "languages": ["Python", "TypeScript", "Go"],
+  "evaluator_profile": "language-profile-v1",
+  "pinned_revision": "synthetic-v1.0.0",
+  "content_fingerprint": "ce2d4956fd6f01f0cf5b9c4e198250c5b1b0ef7a62a3308c3e83de05f56beb24",
+  "purpose": "Minority-language detection, polyglot classification, and honest adapter coverage",
+  "license": "Synthetic fixture; project-owned",
+  "source_root": "repository",
+  "golden_file": "golden.json",
+  "counting_rules_version": "1.0.0",
+  "label_status": "PROVISIONAL_HUMAN_REVIEW_REQUIRED"
+}

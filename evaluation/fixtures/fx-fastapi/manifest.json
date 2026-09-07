@@ -1,0 +1,14 @@
+{
+  "fixture_id": "fx-fastapi",
+  "fixture_version": "1.0.0",
+  "languages": ["Python"],
+  "evaluator_profile": "structural-v1",
+  "pinned_revision": "synthetic-v1.0.0",
+  "content_fingerprint": "3d760c98d2d4b7bd8faa76af87c2a38864e0f9ddbc9d788d793edd7588bc4978",
+  "purpose": "FastAPI routes, dependency injection, services and tests",
+  "license": "Synthetic fixture; project-owned",
+  "source_root": "repository",
+  "golden_file": "golden.json",
+  "counting_rules_version": "1.0.0",
+  "label_status": "PROVISIONAL_HUMAN_REVIEW_REQUIRED"
+}

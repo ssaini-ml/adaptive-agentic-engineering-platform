@@ -1,0 +1,239 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-09-06T12:37:07.794572+00:00",
+  "milestone": "M3C_POSTGRESQL_FULL_TEXT_RETRIEVAL",
+  "technical_status": "PASS",
+  "human_label_review": "PENDING_HUMAN_REVIEW",
+  "retrieval_engine": "POSTGRESQL_FULL_TEXT",
+  "search_configuration": "simple",
+  "cases": [
+    {
+      "id": "fx-small-python-constant",
+      "metrics": {
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "actual_paths": [
+        "app/main.py"
+      ],
+      "hit_count": 1
+    },
+    {
+      "id": "fx-fastapi-router-wiring",
+      "metrics": {
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "actual_paths": [
+        "app/main.py"
+      ],
+      "hit_count": 1
+    },
+    {
+      "id": "fx-messy-dynamic-import",
+      "metrics": {
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "actual_paths": [
+        "package/dynamic.py"
+      ],
+      "hit_count": 1
+    },
+    {
+      "id": "fx-polyglot-typescript",
+      "metrics": {
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "actual_paths": [
+        "web/app.ts"
+      ],
+      "hit_count": 1
+    },
+    {
+      "id": "fx-polyglot-go",
+      "metrics": {
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "actual_paths": [
+        "tools/main.go"
+      ],
+      "hit_count": 1
+    },
+    {
+      "id": "fx-fastapi-documentation",
+      "metrics": {
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "actual_paths": [
+        "README.md"
+      ],
+      "hit_count": 1
+    }
+  ],
+  "gates": [
+    {
+      "gate": "fx-small-python-constant.precision",
+      "value": 1.0,
+      "threshold": 1.0,
+      "status": "PASS"
+    },
+    {
+      "gate": "fx-small-python-constant.recall",
+      "value": 1.0,
+      "threshold": 1.0,
+      "status": "PASS"
+    },
+    {
+      "gate": "fx-fastapi-router-wiring.precision",
+      "value": 1.0,
+      "threshold": 1.0,
+      "status": "PASS"
+    },
+    {
+      "gate": "fx-fastapi-router-wiring.recall",
+      "value": 1.0,
+      "threshold": 1.0,
+      "status": "PASS"
+    },
+    {
+      "gate": "fx-messy-dynamic-import.precision",
+      "value": 1.0,
+      "threshold": 1.0,
+      "status": "PASS"
+    },
+    {
+      "gate": "fx-messy-dynamic-import.recall",
+      "value": 1.0,
+      "threshold": 1.0,
+      "status": "PASS"
+    },
+    {
+      "gate": "fx-polyglot-typescript.precision",
+      "value": 1.0,
+      "threshold": 1.0,
+      "status": "PASS"
+    },
+    {
+      "gate": "fx-polyglot-typescript.recall",
+      "value": 1.0,
+      "threshold": 1.0,
+      "status": "PASS"
+    },
+    {
+      "gate": "fx-polyglot-go.precision",
+      "value": 1.0,
+      "threshold": 1.0,
+      "status": "PASS"
+    },
+    {
+      "gate": "fx-polyglot-go.recall",
+      "value": 1.0,
+      "threshold": 1.0,
+      "status": "PASS"
+    },
+    {
+      "gate": "fx-fastapi-documentation.precision",
+      "value": 1.0,
+      "threshold": 1.0,
+      "status": "PASS"
+    },
+    {
+      "gate": "fx-fastapi-documentation.recall",
+      "value": 1.0,
+      "threshold": 1.0,
+      "status": "PASS"
+    },
+    {
+      "gate": "postgresql_engine",
+      "value": 1.0,
+      "threshold": 1.0,
+      "status": "PASS"
+    },
+    {
+      "gate": "gin_index",
+      "value": 1.0,
+      "threshold": 1.0,
+      "status": "PASS"
+    },
+    {
+      "gate": "search_vectors_populated",
+      "value": 1.0,
+      "threshold": 1.0,
+      "status": "PASS"
+    },
+    {
+      "gate": "postgresql_immutability_trigger",
+      "value": 1.0,
+      "threshold": 1.0,
+      "status": "PASS"
+    },
+    {
+      "gate": "deterministic_ordering",
+      "value": 1.0,
+      "threshold": 1.0,
+      "status": "PASS"
+    },
+    {
+      "gate": "scan_isolation",
+      "value": 1.0,
+      "threshold": 1.0,
+      "status": "PASS"
+    },
+    {
+      "gate": "bound_enforcement",
+      "value": 1.0,
+      "threshold": 1.0,
+      "status": "PASS"
+    },
+    {
+      "gate": "citation_validity",
+      "value": 1.0,
+      "threshold": 1.0,
+      "status": "PASS"
+    },
+    {
+      "gate": "generated_and_vendored_exclusion",
+      "value": 1.0,
+      "threshold": 1.0,
+      "status": "PASS"
+    },
+    {
+      "gate": "polyglot_language_coverage",
+      "value": 1.0,
+      "threshold": 1.0,
+      "status": "PASS"
+    }
+  ],
+  "limits": {
+    "max_query_characters": 256,
+    "max_results": 100
+  },
+  "document_counts": {
+    "fx-fastapi": 9,
+    "fx-messy": 11,
+    "fx-polyglot": 3,
+    "fx-small": 7
+  }
+}

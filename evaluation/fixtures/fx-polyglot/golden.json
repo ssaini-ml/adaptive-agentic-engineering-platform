@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "label_status": "PROVISIONAL_HUMAN_REVIEW_REQUIRED",
+  "language_profile": {
+    "repository_type": "POLYGLOT",
+    "primary_language": "TypeScript",
+    "extractor_status": {
+      "Python": "SUPPORTED",
+      "TypeScript": "UNSUPPORTED",
+      "Go": "UNSUPPORTED"
+    },
+    "files": [
+      {"path": "services/api.py", "language": "Python", "is_generated": false, "is_vendored": false},
+      {"path": "web/app.ts", "language": "TypeScript", "is_generated": false, "is_vendored": false},
+      {"path": "tools/main.go", "language": "Go", "is_generated": false, "is_vendored": false},
+      {"path": "generated/client.ts", "language": "TypeScript", "is_generated": true, "is_vendored": false},
+      {"path": "vendor/helper.go", "language": "Go", "is_generated": false, "is_vendored": true}
+    ]
+  },
+  "symbols": [],
+  "imports": [],
+  "routes": [],
+  "questions": [
+    {
+      "id": "polyglot-cross-language-call",
+      "question": "Does the TypeScript frontend call the Python service?",
+      "query_class": "UNSUPPORTED",
+      "answerable": false,
+      "required_slots": ["unsupported_capability"],
+      "essential_claims": [],
+      "optional_claims": [],
+      "expected_resources": []
+    }
+  ]
+}

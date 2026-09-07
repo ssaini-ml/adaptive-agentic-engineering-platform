@@ -1,0 +1,98 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-09-05T20:15:35.293759+00:00",
+  "milestone": "M0_EVALUATION_FOUNDATION",
+  "technical_status": "PASS",
+  "human_label_review": "PENDING_HUMAN_REVIEW",
+  "fixtures": [
+    {
+      "fixture_id": "fx-fastapi",
+      "fixture_version": "1.0.0",
+      "languages": [
+        "Python"
+      ],
+      "evaluator_profile": "structural-v1",
+      "pinned_revision": "synthetic-v1.0.0",
+      "content_fingerprint": "3d760c98d2d4b7bd8faa76af87c2a38864e0f9ddbc9d788d793edd7588bc4978",
+      "file_count": 11,
+      "language_file_labels": 9,
+      "symbol_labels": 20,
+      "import_labels": 14,
+      "route_labels": 2,
+      "question_labels": 4,
+      "answerable_questions": 3,
+      "unanswerable_questions": 1,
+      "label_status": "PROVISIONAL_HUMAN_REVIEW_REQUIRED"
+    },
+    {
+      "fixture_id": "fx-messy",
+      "fixture_version": "1.0.0",
+      "languages": [
+        "Python"
+      ],
+      "evaluator_profile": "structural-v1",
+      "pinned_revision": "synthetic-v1.0.0",
+      "content_fingerprint": "e56b671020cdc8d0cc9f4f562b60fc74c3e4e25377096bf2ffbc0f4bd6a60841",
+      "file_count": 11,
+      "language_file_labels": 9,
+      "symbol_labels": 20,
+      "import_labels": 13,
+      "route_labels": 0,
+      "question_labels": 3,
+      "answerable_questions": 2,
+      "unanswerable_questions": 1,
+      "label_status": "PROVISIONAL_HUMAN_REVIEW_REQUIRED"
+    },
+    {
+      "fixture_id": "fx-polyglot",
+      "fixture_version": "1.0.0",
+      "languages": [
+        "Python",
+        "TypeScript",
+        "Go"
+      ],
+      "evaluator_profile": "language-profile-v1",
+      "pinned_revision": "synthetic-v1.0.0",
+      "content_fingerprint": "ce2d4956fd6f01f0cf5b9c4e198250c5b1b0ef7a62a3308c3e83de05f56beb24",
+      "file_count": 5,
+      "language_file_labels": 5,
+      "symbol_labels": 0,
+      "import_labels": 0,
+      "route_labels": 0,
+      "question_labels": 1,
+      "answerable_questions": 0,
+      "unanswerable_questions": 1,
+      "label_status": "PROVISIONAL_HUMAN_REVIEW_REQUIRED"
+    },
+    {
+      "fixture_id": "fx-small",
+      "fixture_version": "1.0.0",
+      "languages": [
+        "Python"
+      ],
+      "evaluator_profile": "structural-v1",
+      "pinned_revision": "synthetic-v1.0.0",
+      "content_fingerprint": "ac127041db0281324b1b323426af7c5ab8e278cde1a30394c73ac3bdffe31547",
+      "file_count": 7,
+      "language_file_labels": 5,
+      "symbol_labels": 13,
+      "import_labels": 5,
+      "route_labels": 0,
+      "question_labels": 3,
+      "answerable_questions": 2,
+      "unanswerable_questions": 1,
+      "label_status": "PROVISIONAL_HUMAN_REVIEW_REQUIRED"
+    }
+  ],
+  "prediction_metrics": {
+    "status": "NOT_RUN"
+  },
+  "v0_1_release_gates": {
+    "status": "NOT_RUN",
+    "reason": "Product extraction and Q&A outputs are implemented in later milestones."
+  },
+  "holdout": {
+    "status": "POLICY_DEFINED_SELECTION_PENDING",
+    "policy": "HOLDOUT_POLICY.md"
+  }
+}

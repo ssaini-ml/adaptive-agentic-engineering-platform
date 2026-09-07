@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://adaptive-platform.local/schemas/holdout-manifest-v1.json",
+  "title": "Evaluation holdout manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "fixture_id",
+    "fixture_version",
+    "languages",
+    "evaluator_profile",
+    "repository_origin",
+    "license",
+    "pinned_commit",
+    "content_fingerprint",
+    "label_version",
+    "counting_rules_version",
+    "review_status"
+  ],
+  "properties": {
+    "fixture_id": {
+      "type": "string",
+      "pattern": "^fx-[a-z0-9-]+-holdout$"
+    },
+    "fixture_version": {"type": "string", "minLength": 1},
+    "languages": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "evaluator_profile": {"type": "string", "minLength": 1},
+    "repository_origin": {"type": "string", "minLength": 1},
+    "license": {"type": "string", "minLength": 1},
+    "pinned_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "content_fingerprint": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "label_version": {"type": "string", "minLength": 1},
+    "counting_rules_version": {"type": "string", "minLength": 1},
+    "review_status": {
+      "enum": ["PENDING_HUMAN_REVIEW", "APPROVED"]
+    }
+  }
+}

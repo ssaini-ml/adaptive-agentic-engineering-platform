@@ -1,0 +1,14 @@
+{
+  "fixture_id": "fx-small",
+  "fixture_version": "1.0.0",
+  "languages": ["Python"],
+  "evaluator_profile": "structural-v1",
+  "pinned_revision": "synthetic-v1.0.0",
+  "content_fingerprint": "ac127041db0281324b1b323426af7c5ab8e278cde1a30394c73ac3bdffe31547",
+  "purpose": "Fast CI and exhaustive structural labels",
+  "license": "Synthetic fixture; project-owned",
+  "source_root": "repository",
+  "golden_file": "golden.json",
+  "counting_rules_version": "1.0.0",
+  "label_status": "PROVISIONAL_HUMAN_REVIEW_REQUIRED"
+}

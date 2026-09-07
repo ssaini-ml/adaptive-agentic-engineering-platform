@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "status": "PENDING_HUMAN_REVIEW",
+  "counting_rules_version": "1.0.0",
+  "reviewers": [],
+  "first_pass_agreement": null,
+  "adjudication_completed": false,
+  "notes": [
+    "Machine-authored provisional labels must be independently reviewed by two engineers before V0.1 release sign-off."
+  ]
+}
+

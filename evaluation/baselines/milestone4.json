@@ -1,0 +1,318 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-09-06T13:25:55.328794+00:00",
+  "milestone": "M4_ASSEMBLY_AND_GROUNDED_QA",
+  "technical_status": "PASS",
+  "human_label_review": "PENDING_HUMAN_REVIEW",
+  "engine": "SQLITE_TEST_HARNESS",
+  "production_dependency_gate": "M3C_POSTGRESQL_REQUIRED",
+  "cases": [
+    {
+      "fixture_id": "fx-fastapi",
+      "question_id": "fastapi-entrypoint",
+      "query_class_expected": "LOCATION",
+      "query_class_actual": "LOCATION",
+      "status_expected": "ANSWERED",
+      "status_actual": "ANSWERED",
+      "required_slots_expected": [
+        "framework_construction",
+        "containing_module"
+      ],
+      "required_slots_actual": [
+        "framework_construction",
+        "containing_module"
+      ],
+      "expected_resources": [
+        "app/main.py"
+      ],
+      "actual_resources": [
+        "app/main.py"
+      ],
+      "citation_valid": true,
+      "false_confident": false,
+      "pre_gate_model_calls": 0,
+      "passed": true
+    },
+    {
+      "fixture_id": "fx-fastapi",
+      "question_id": "fastapi-importers",
+      "query_class_expected": "STRUCTURAL",
+      "query_class_actual": "STRUCTURAL",
+      "status_expected": "ANSWERED",
+      "status_actual": "ANSWERED",
+      "required_slots_expected": [
+        "unique_target",
+        "import_edges",
+        "file_categories"
+      ],
+      "required_slots_actual": [
+        "unique_target",
+        "import_edges",
+        "file_categories"
+      ],
+      "expected_resources": [
+        "app/api/customers.py",
+        "app/dependencies.py",
+        "app/services/__init__.py",
+        "tests/test_customers.py"
+      ],
+      "actual_resources": [
+        "app/api/customers.py",
+        "app/dependencies.py",
+        "app/services/__init__.py",
+        "tests/test_customers.py"
+      ],
+      "citation_valid": true,
+      "false_confident": false,
+      "pre_gate_model_calls": 0,
+      "passed": true
+    },
+    {
+      "fixture_id": "fx-fastapi",
+      "question_id": "fastapi-routes",
+      "query_class_expected": "STRUCTURAL",
+      "query_class_actual": "STRUCTURAL",
+      "status_expected": "ANSWERED",
+      "status_actual": "ANSWERED",
+      "required_slots_expected": [
+        "route_symbols"
+      ],
+      "required_slots_actual": [
+        "route_symbols"
+      ],
+      "expected_resources": [
+        "app/api/customers.py"
+      ],
+      "actual_resources": [
+        "app/api/customers.py"
+      ],
+      "citation_valid": true,
+      "false_confident": false,
+      "pre_gate_model_calls": 0,
+      "passed": true
+    },
+    {
+      "fixture_id": "fx-fastapi",
+      "question_id": "fastapi-choice",
+      "query_class_expected": "UNSUPPORTED",
+      "query_class_actual": "UNSUPPORTED",
+      "status_expected": "ABSTAINED",
+      "status_actual": "ABSTAINED",
+      "required_slots_expected": [
+        "recorded_decision"
+      ],
+      "required_slots_actual": [
+        "recorded_decision"
+      ],
+      "expected_resources": [],
+      "actual_resources": [],
+      "citation_valid": true,
+      "false_confident": false,
+      "pre_gate_model_calls": 0,
+      "passed": true
+    },
+    {
+      "fixture_id": "fx-messy",
+      "question_id": "messy-definition",
+      "query_class_expected": "EXACT_SYMBOL",
+      "query_class_actual": "EXACT_SYMBOL",
+      "status_expected": "ANSWERED",
+      "status_actual": "ANSWERED",
+      "required_slots_expected": [
+        "unique_target"
+      ],
+      "required_slots_actual": [
+        "unique_target"
+      ],
+      "expected_resources": [
+        "package/repository.py"
+      ],
+      "actual_resources": [
+        "package/repository.py"
+      ],
+      "citation_valid": true,
+      "false_confident": false,
+      "pre_gate_model_calls": 0,
+      "passed": true
+    },
+    {
+      "fixture_id": "fx-messy",
+      "question_id": "messy-alias",
+      "query_class_expected": "STRUCTURAL",
+      "query_class_actual": "STRUCTURAL",
+      "status_expected": "ANSWERED",
+      "status_actual": "ANSWERED",
+      "required_slots_expected": [
+        "unique_target",
+        "import_edges"
+      ],
+      "required_slots_actual": [
+        "unique_target",
+        "import_edges"
+      ],
+      "expected_resources": [
+        "package/service.py"
+      ],
+      "actual_resources": [
+        "package/service.py"
+      ],
+      "citation_valid": true,
+      "false_confident": false,
+      "pre_gate_model_calls": 0,
+      "passed": true
+    },
+    {
+      "fixture_id": "fx-messy",
+      "question_id": "messy-dynamic",
+      "query_class_expected": "UNSUPPORTED",
+      "query_class_actual": "UNSUPPORTED",
+      "status_expected": "ABSTAINED",
+      "status_actual": "ABSTAINED",
+      "required_slots_expected": [
+        "runtime_observation"
+      ],
+      "required_slots_actual": [
+        "runtime_observation"
+      ],
+      "expected_resources": [
+        "package/dynamic.py"
+      ],
+      "actual_resources": [],
+      "citation_valid": true,
+      "false_confident": false,
+      "pre_gate_model_calls": 0,
+      "passed": true
+    },
+    {
+      "fixture_id": "fx-polyglot",
+      "question_id": "polyglot-cross-language-call",
+      "query_class_expected": "UNSUPPORTED",
+      "query_class_actual": "UNSUPPORTED",
+      "status_expected": "ABSTAINED",
+      "status_actual": "ABSTAINED",
+      "required_slots_expected": [
+        "unsupported_capability"
+      ],
+      "required_slots_actual": [
+        "unsupported_capability"
+      ],
+      "expected_resources": [],
+      "actual_resources": [],
+      "citation_valid": true,
+      "false_confident": false,
+      "pre_gate_model_calls": 0,
+      "passed": true
+    },
+    {
+      "fixture_id": "fx-small",
+      "question_id": "small-definition",
+      "query_class_expected": "EXACT_SYMBOL",
+      "query_class_actual": "EXACT_SYMBOL",
+      "status_expected": "ANSWERED",
+      "status_actual": "ANSWERED",
+      "required_slots_expected": [
+        "unique_target"
+      ],
+      "required_slots_actual": [
+        "unique_target"
+      ],
+      "expected_resources": [
+        "app/service.py"
+      ],
+      "actual_resources": [
+        "app/service.py"
+      ],
+      "citation_valid": true,
+      "false_confident": false,
+      "pre_gate_model_calls": 0,
+      "passed": true
+    },
+    {
+      "fixture_id": "fx-small",
+      "question_id": "small-importers",
+      "query_class_expected": "STRUCTURAL",
+      "query_class_actual": "STRUCTURAL",
+      "status_expected": "ANSWERED",
+      "status_actual": "ANSWERED",
+      "required_slots_expected": [
+        "unique_target",
+        "import_edges"
+      ],
+      "required_slots_actual": [
+        "unique_target",
+        "import_edges"
+      ],
+      "expected_resources": [
+        "app/__init__.py",
+        "app/main.py",
+        "tests/test_service.py"
+      ],
+      "actual_resources": [
+        "app/__init__.py",
+        "app/main.py",
+        "tests/test_service.py"
+      ],
+      "citation_valid": true,
+      "false_confident": false,
+      "pre_gate_model_calls": 0,
+      "passed": true
+    },
+    {
+      "fixture_id": "fx-small",
+      "question_id": "small-functions-in-module",
+      "query_class_expected": "GENERAL_STRUCTURAL",
+      "query_class_actual": "GENERAL_STRUCTURAL",
+      "status_expected": "ANSWERED",
+      "status_actual": "ANSWERED",
+      "required_slots_expected": [
+        "unique_module",
+        "function_symbols"
+      ],
+      "required_slots_actual": [
+        "unique_module",
+        "function_symbols"
+      ],
+      "expected_resources": [
+        "app/main.py"
+      ],
+      "actual_resources": [
+        "app/main.py"
+      ],
+      "citation_valid": true,
+      "false_confident": false,
+      "pre_gate_model_calls": 0,
+      "passed": true
+    },
+    {
+      "fixture_id": "fx-small",
+      "question_id": "small-history",
+      "query_class_expected": "UNSUPPORTED",
+      "query_class_actual": "UNSUPPORTED",
+      "status_expected": "ABSTAINED",
+      "status_actual": "ABSTAINED",
+      "required_slots_expected": [
+        "recorded_decision"
+      ],
+      "required_slots_actual": [
+        "recorded_decision"
+      ],
+      "expected_resources": [],
+      "actual_resources": [],
+      "citation_valid": true,
+      "false_confident": false,
+      "pre_gate_model_calls": 0,
+      "passed": true
+    }
+  ],
+  "metrics": {
+    "case_count": 12,
+    "case_pass_rate": 1.0,
+    "classifier_accuracy": 1.0,
+    "slot_map_accuracy": 1.0,
+    "answer_coverage": 1.0,
+    "abstention_recall": 1.0,
+    "citation_validity": 1.0,
+    "false_confident_answer_rate": 0.0,
+    "pre_gate_model_call_count": 0
+  }
+}

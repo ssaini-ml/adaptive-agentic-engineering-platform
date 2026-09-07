@@ -1,0 +1,38 @@
+name: Evaluation
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  milestone-zero:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_DB: adaptive
+          POSTGRES_USER: adaptive
+          POSTGRES_PASSWORD: adaptive
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U adaptive -d adaptive"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      AAEP_DATABASE_URL: postgresql+psycopg://adaptive:adaptive@localhost:5432/adaptive
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install -e '.[dev]'
+      - run: pytest
+      - run: python -m adaptive_platform.evaluation.runner
+      - run: python -m adaptive_platform.languages.evaluation
+      - run: python -m adaptive_platform.extraction.evaluation
+      - run: python -m adaptive_platform.retrieval.evaluation
+      - run: python -m alembic upgrade head
+      - run: python -m adaptive_platform.retrieval.full_text_evaluation

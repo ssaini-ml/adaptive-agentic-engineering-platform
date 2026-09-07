@@ -1,0 +1,154 @@
+{
+  "extractor": {
+    "name": "python-ast",
+    "version": "1.0.0",
+    "status": "SUPPORTED"
+  },
+  "symbols": [
+    {
+      "qualified_name": "app",
+      "type": "MODULE",
+      "path": "app/__init__.py",
+      "start_line": 1,
+      "end_line": 3
+    },
+    {
+      "qualified_name": "app.main",
+      "type": "MODULE",
+      "path": "app/main.py",
+      "start_line": 1,
+      "end_line": 13
+    },
+    {
+      "qualified_name": "app.main.DEFAULT_PAGE_SIZE",
+      "type": "CONSTANT",
+      "path": "app/main.py",
+      "start_line": 4,
+      "end_line": 4
+    },
+    {
+      "qualified_name": "app.main.create_service",
+      "type": "FUNCTION",
+      "path": "app/main.py",
+      "start_line": 7,
+      "end_line": 8
+    },
+    {
+      "qualified_name": "app.main.list_customer_names",
+      "type": "FUNCTION",
+      "path": "app/main.py",
+      "start_line": 11,
+      "end_line": 13
+    },
+    {
+      "qualified_name": "app.models",
+      "type": "MODULE",
+      "path": "app/models.py",
+      "start_line": 1,
+      "end_line": 7
+    },
+    {
+      "qualified_name": "app.models.Customer",
+      "type": "CLASS",
+      "path": "app/models.py",
+      "start_line": 5,
+      "end_line": 7
+    },
+    {
+      "qualified_name": "app.service",
+      "type": "MODULE",
+      "path": "app/service.py",
+      "start_line": 1,
+      "end_line": 12
+    },
+    {
+      "qualified_name": "app.service.CustomerService",
+      "type": "CLASS",
+      "path": "app/service.py",
+      "start_line": 4,
+      "end_line": 12
+    },
+    {
+      "qualified_name": "app.service.CustomerService.list_customers",
+      "type": "METHOD",
+      "path": "app/service.py",
+      "start_line": 5,
+      "end_line": 6
+    },
+    {
+      "qualified_name": "app.service.CustomerService.get_customer",
+      "type": "METHOD",
+      "path": "app/service.py",
+      "start_line": 8,
+      "end_line": 12
+    },
+    {
+      "qualified_name": "tests.test_service",
+      "type": "MODULE",
+      "path": "tests/test_service.py",
+      "start_line": 1,
+      "end_line": 6
+    },
+    {
+      "qualified_name": "tests.test_service.test_lists_customers",
+      "type": "FUNCTION",
+      "path": "tests/test_service.py",
+      "start_line": 4,
+      "end_line": 6
+    }
+  ],
+  "imports": [
+    {
+      "source_unit": "app",
+      "imported_name": "app.service.CustomerService",
+      "alias": null,
+      "path": "app/__init__.py",
+      "line": 1,
+      "type_checking": false
+    },
+    {
+      "source_unit": "app.main",
+      "imported_name": "app.service.CustomerService",
+      "alias": null,
+      "path": "app/main.py",
+      "line": 1,
+      "type_checking": false
+    },
+    {
+      "source_unit": "app.models",
+      "imported_name": "dataclasses.dataclass",
+      "alias": null,
+      "path": "app/models.py",
+      "line": 1,
+      "type_checking": false
+    },
+    {
+      "source_unit": "app.service",
+      "imported_name": "app.models.Customer",
+      "alias": null,
+      "path": "app/service.py",
+      "line": 1,
+      "type_checking": false
+    },
+    {
+      "source_unit": "tests.test_service",
+      "imported_name": "app.service.CustomerService",
+      "alias": null,
+      "path": "tests/test_service.py",
+      "line": 1,
+      "type_checking": false
+    }
+  ],
+  "routes": [],
+  "exposes": [
+    {
+      "source_unit": "app",
+      "target": "app.service.CustomerService",
+      "path": "app/__init__.py",
+      "line": 3
+    }
+  ],
+  "unresolved": [],
+  "inherits": [],
+  "diagnostics": []
+}

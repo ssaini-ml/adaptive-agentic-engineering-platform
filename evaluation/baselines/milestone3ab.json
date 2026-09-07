@@ -1,0 +1,283 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-09-06T10:33:10.714662+00:00",
+  "milestone": "M3A_M3B_STRUCTURAL_RETRIEVAL",
+  "technical_status": "PASS",
+  "human_label_review": "PENDING_HUMAN_REVIEW",
+  "exact_cases": [
+    {
+      "id": "fx-small-exact-service",
+      "metrics": {
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "actual_qualified_names": [
+        "app.service.CustomerService"
+      ]
+    },
+    {
+      "id": "fx-fastapi-exact-route",
+      "metrics": {
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "actual_qualified_names": [
+        "app.api.customers.GET /customers/{customer_id}"
+      ]
+    },
+    {
+      "id": "fx-messy-exact-nested-function",
+      "metrics": {
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "actual_qualified_names": [
+        "package.decorators.traced.wrapper"
+      ]
+    }
+  ],
+  "graph_cases": [
+    {
+      "id": "fx-small-outgoing-import-and-export",
+      "metrics": {
+        "true_positive": 2,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "actual_edges": [
+        [
+          "app",
+          "EXPOSES",
+          "app.service.CustomerService",
+          null,
+          1
+        ],
+        [
+          "app",
+          "IMPORTS",
+          "app.service.CustomerService",
+          null,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "fx-fastapi-incoming-service-imports",
+      "metrics": {
+        "true_positive": 4,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "actual_edges": [
+        [
+          "app.api.customers",
+          "IMPORTS",
+          "app.services.customer.CustomerService",
+          null,
+          1
+        ],
+        [
+          "app.dependencies",
+          "IMPORTS",
+          "app.services.customer.CustomerService",
+          null,
+          1
+        ],
+        [
+          "app.services",
+          "IMPORTS",
+          "app.services.customer.CustomerService",
+          null,
+          1
+        ],
+        [
+          "tests.test_customers",
+          "IMPORTS",
+          "app.services.customer.CustomerService",
+          null,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "fx-messy-unresolved-reference",
+      "metrics": {
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "actual_edges": [
+        [
+          "package.dynamic",
+          "REFERENCES",
+          null,
+          "importlib.import_module(module_name)",
+          1
+        ]
+      ]
+    },
+    {
+      "id": "fx-messy-bounded-two-hop",
+      "metrics": {
+        "true_positive": 3,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "actual_edges": [
+        [
+          "package",
+          "EXPOSES",
+          "package.repository.UserRepository",
+          null,
+          1
+        ],
+        [
+          "package",
+          "IMPORTS",
+          "package.repository.UserRepository",
+          null,
+          1
+        ],
+        [
+          "package.repository.UserRepository",
+          "INHERITS",
+          "package.base.BaseRepository",
+          null,
+          2
+        ]
+      ]
+    }
+  ],
+  "gates": [
+    {
+      "gate": "fx-small-exact-service.precision",
+      "value": 1.0,
+      "threshold": 1.0,
+      "status": "PASS"
+    },
+    {
+      "gate": "fx-small-exact-service.recall",
+      "value": 1.0,
+      "threshold": 1.0,
+      "status": "PASS"
+    },
+    {
+      "gate": "fx-fastapi-exact-route.precision",
+      "value": 1.0,
+      "threshold": 1.0,
+      "status": "PASS"
+    },
+    {
+      "gate": "fx-fastapi-exact-route.recall",
+      "value": 1.0,
+      "threshold": 1.0,
+      "status": "PASS"
+    },
+    {
+      "gate": "fx-messy-exact-nested-function.precision",
+      "value": 1.0,
+      "threshold": 1.0,
+      "status": "PASS"
+    },
+    {
+      "gate": "fx-messy-exact-nested-function.recall",
+      "value": 1.0,
+      "threshold": 1.0,
+      "status": "PASS"
+    },
+    {
+      "gate": "fx-small-outgoing-import-and-export.precision",
+      "value": 1.0,
+      "threshold": 1.0,
+      "status": "PASS"
+    },
+    {
+      "gate": "fx-small-outgoing-import-and-export.recall",
+      "value": 1.0,
+      "threshold": 1.0,
+      "status": "PASS"
+    },
+    {
+      "gate": "fx-fastapi-incoming-service-imports.precision",
+      "value": 1.0,
+      "threshold": 1.0,
+      "status": "PASS"
+    },
+    {
+      "gate": "fx-fastapi-incoming-service-imports.recall",
+      "value": 1.0,
+      "threshold": 1.0,
+      "status": "PASS"
+    },
+    {
+      "gate": "fx-messy-unresolved-reference.precision",
+      "value": 1.0,
+      "threshold": 1.0,
+      "status": "PASS"
+    },
+    {
+      "gate": "fx-messy-unresolved-reference.recall",
+      "value": 1.0,
+      "threshold": 1.0,
+      "status": "PASS"
+    },
+    {
+      "gate": "fx-messy-bounded-two-hop.precision",
+      "value": 1.0,
+      "threshold": 1.0,
+      "status": "PASS"
+    },
+    {
+      "gate": "fx-messy-bounded-two-hop.recall",
+      "value": 1.0,
+      "threshold": 1.0,
+      "status": "PASS"
+    },
+    {
+      "gate": "deterministic_ordering",
+      "value": 1.0,
+      "threshold": 1.0,
+      "status": "PASS"
+    },
+    {
+      "gate": "scan_isolation",
+      "value": 1.0,
+      "threshold": 1.0,
+      "status": "PASS"
+    },
+    {
+      "gate": "bound_enforcement",
+      "value": 1.0,
+      "threshold": 1.0,
+      "status": "PASS"
+    },
+    {
+      "gate": "citation_validity",
+      "value": 1.0,
+      "threshold": 1.0,
+      "status": "PASS"
+    }
+  ],
+  "limits": {
+    "max_traversal_depth": 3,
+    "max_results": 500
+  },
+  "full_text_status": "DEFERRED_TO_M3C"
+}

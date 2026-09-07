@@ -1,0 +1,197 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-09-05T20:15:35.408555+00:00",
+  "milestone": "M2B_PYTHON_EVIDENCE_EXTRACTION",
+  "technical_status": "PASS",
+  "human_label_review": "PENDING_HUMAN_REVIEW",
+  "extractor": {
+    "language": "Python",
+    "name": "python-ast",
+    "version": "1.0.0"
+  },
+  "fixtures": {
+    "fx-fastapi": {
+      "symbols": {
+        "true_positive": 20,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "imports": {
+        "true_positive": 14,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "routes": {
+        "true_positive": 2,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "exposes": {
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "unresolved": {
+        "status": "NOT_LABELED"
+      },
+      "inherits": {
+        "status": "NOT_LABELED"
+      }
+    },
+    "fx-messy": {
+      "symbols": {
+        "true_positive": 20,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "imports": {
+        "true_positive": 12,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "routes": {
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "exposes": {
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "unresolved": {
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "inherits": {
+        "status": "NOT_LABELED"
+      }
+    },
+    "fx-small": {
+      "symbols": {
+        "true_positive": 13,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "imports": {
+        "true_positive": 5,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "routes": {
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "exposes": {
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "unresolved": {
+        "status": "NOT_LABELED"
+      },
+      "inherits": {
+        "status": "NOT_LABELED"
+      }
+    }
+  },
+  "gates": [
+    {
+      "gate": "fx-fastapi.symbols.precision",
+      "value": 1.0,
+      "threshold": 0.95,
+      "status": "PASS"
+    },
+    {
+      "gate": "fx-fastapi.symbols.recall",
+      "value": 1.0,
+      "threshold": 0.95,
+      "status": "PASS"
+    },
+    {
+      "gate": "fx-fastapi.imports.recall",
+      "value": 1.0,
+      "threshold": 0.9,
+      "status": "PASS"
+    },
+    {
+      "gate": "fx-fastapi.routes.precision",
+      "value": 1.0,
+      "threshold": 0.95,
+      "status": "PASS"
+    },
+    {
+      "gate": "fx-fastapi.routes.recall",
+      "value": 1.0,
+      "threshold": 0.95,
+      "status": "PASS"
+    },
+    {
+      "gate": "fx-messy.symbols.precision",
+      "value": 1.0,
+      "threshold": 0.95,
+      "status": "PASS"
+    },
+    {
+      "gate": "fx-messy.symbols.recall",
+      "value": 1.0,
+      "threshold": 0.95,
+      "status": "PASS"
+    },
+    {
+      "gate": "fx-messy.imports.recall",
+      "value": 1.0,
+      "threshold": 0.9,
+      "status": "PASS"
+    },
+    {
+      "gate": "fx-small.symbols.precision",
+      "value": 1.0,
+      "threshold": 0.95,
+      "status": "PASS"
+    },
+    {
+      "gate": "fx-small.symbols.recall",
+      "value": 1.0,
+      "threshold": 0.95,
+      "status": "PASS"
+    },
+    {
+      "gate": "fx-small.imports.recall",
+      "value": 1.0,
+      "threshold": 0.9,
+      "status": "PASS"
+    }
+  ],
+  "holdout": {
+    "status": "POLICY_DEFINED_SELECTION_PENDING"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0.0",
+  "label_status": "PENDING_HUMAN_REVIEW",
+  "exact_cases": [
+    {
+      "id": "fx-small-exact-service",
+      "fixture": "fx-small",
+      "query": "CustomerService",
+      "symbol_types": [],
+      "file_path": null,
+      "language": "Python",
+      "expected_qualified_names": ["app.service.CustomerService"]
+    },
+    {
+      "id": "fx-fastapi-exact-route",
+      "fixture": "fx-fastapi",
+      "query": "GET /customers/{customer_id}",
+      "symbol_types": ["ROUTE"],
+      "file_path": "app/api/customers.py",
+      "expected_qualified_names": ["app.api.customers.GET /customers/{customer_id}"]
+    },
+    {
+      "id": "fx-messy-exact-nested-function",
+      "fixture": "fx-messy",
+      "query": "package.decorators.traced.wrapper",
+      "symbol_types": ["FUNCTION"],
+      "file_path": "package/decorators.py",
+      "expected_qualified_names": ["package.decorators.traced.wrapper"]
+    }
+  ],
+  "graph_cases": [
+    {
+      "id": "fx-small-outgoing-import-and-export",
+      "fixture": "fx-small",
+      "start_qualified_name": "app",
+      "direction": "OUTGOING",
+      "relationship_types": ["IMPORTS", "EXPOSES"],
+      "max_depth": 1,
+      "expected_edges": [
+        ["app", "EXPOSES", "app.service.CustomerService", null, 1],
+        ["app", "IMPORTS", "app.service.CustomerService", null, 1]
+      ]
+    },
+    {
+      "id": "fx-fastapi-incoming-service-imports",
+      "fixture": "fx-fastapi",
+      "start_qualified_name": "app.services.customer.CustomerService",
+      "direction": "INCOMING",
+      "relationship_types": ["IMPORTS"],
+      "max_depth": 1,
+      "expected_edges": [
+        ["app.api.customers", "IMPORTS", "app.services.customer.CustomerService", null, 1],
+        ["app.dependencies", "IMPORTS", "app.services.customer.CustomerService", null, 1],
+        ["app.services", "IMPORTS", "app.services.customer.CustomerService", null, 1],
+        ["tests.test_customers", "IMPORTS", "app.services.customer.CustomerService", null, 1]
+      ]
+    },
+    {
+      "id": "fx-messy-unresolved-reference",
+      "fixture": "fx-messy",
+      "start_qualified_name": "package.dynamic",
+      "direction": "OUTGOING",
+      "relationship_types": ["REFERENCES"],
+      "max_depth": 1,
+      "expected_edges": [
+        ["package.dynamic", "REFERENCES", null, "importlib.import_module(module_name)", 1]
+      ]
+    },
+    {
+      "id": "fx-messy-bounded-two-hop",
+      "fixture": "fx-messy",
+      "start_qualified_name": "package",
+      "direction": "OUTGOING",
+      "relationship_types": ["IMPORTS", "EXPOSES", "INHERITS"],
+      "max_depth": 2,
+      "expected_edges": [
+        ["package", "EXPOSES", "package.repository.UserRepository", null, 1],
+        ["package", "IMPORTS", "package.repository.UserRepository", null, 1],
+        ["package.repository.UserRepository", "INHERITS", "package.base.BaseRepository", null, 2]
+      ]
+    }
+  ]
+}

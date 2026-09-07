@@ -1,0 +1,14 @@
+{
+  "fixture_id": "fx-messy",
+  "fixture_version": "1.0.0",
+  "languages": ["Python"],
+  "evaluator_profile": "structural-v1",
+  "pinned_revision": "synthetic-v1.0.0",
+  "content_fingerprint": "e56b671020cdc8d0cc9f4f562b60fc74c3e4e25377096bf2ffbc0f4bd6a60841",
+  "purpose": "Aliases, re-exports, conditional and dynamic behavior",
+  "license": "Synthetic fixture; project-owned",
+  "source_root": "repository",
+  "golden_file": "golden.json",
+  "counting_rules_version": "1.0.0",
+  "label_status": "PROVISIONAL_HUMAN_REVIEW_REQUIRED"
+}
