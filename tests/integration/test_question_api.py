@@ -147,6 +147,10 @@ def test_agent_profiles_are_exposed_but_disabled(question_client) -> None:
     }
     assert all(item["status"] == "DISABLED" for item in profiles.json())
     assert all(not item["source_write_access"] for item in profiles.json())
+    assert all(not item["network_access"] for item in profiles.json())
+    assert all(not item["external_side_effect_access"] for item in profiles.json())
+    assert all(not item["approval_authority"] for item in profiles.json())
+    assert all(item["required_payload_keys"] for item in profiles.json())
 
 
 def test_review_surface_lists_abstentions_and_unresolved_references(question_client) -> None:
@@ -161,3 +165,15 @@ def test_review_surface_lists_abstentions_and_unresolved_references(question_cli
         response.json()["task_id"]
     }
     assert review.json()["candidate_rules_status"] == "DISABLED_UNTIL_V0.4"
+
+
+def test_visual_review_console_is_local_and_no_store(question_client) -> None:
+    client, _, _ = question_client
+
+    response = client.get("/review/ui")
+
+    assert response.status_code == 200
+    assert response.headers["cache-control"] == "no-store"
+    assert "default-src 'none'" in response.headers["content-security-policy"]
+    assert "Evidence review" in response.text
+    assert "fetch('/review'" in response.text

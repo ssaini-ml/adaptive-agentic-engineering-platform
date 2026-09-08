@@ -87,8 +87,8 @@ V0.1 does not modify code.
 - Repository, retrieval, decision, execution, verification and learning events.
 - Reasons are recorded for selected and omitted material.
 - M4A exposes task, trace, disabled-agent-profile, append-only correction, and
-  JSON abstention/unresolved-reference queue endpoints; a polished visual
-  console remains a release-sign-off item.
+  JSON abstention/unresolved-reference queue endpoints plus a small local visual
+  projection for human review.
 - Review effort is measured against an initial 30-minute-per-repository weekly
   operating hypothesis.
 

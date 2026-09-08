@@ -13,9 +13,12 @@
     "license",
     "pinned_commit",
     "content_fingerprint",
+    "file_count",
     "label_version",
     "counting_rules_version",
-    "review_status"
+    "review_status",
+    "license_status",
+    "provenance_status"
   ],
   "properties": {
     "fixture_id": {
@@ -34,10 +37,13 @@
     "license": {"type": "string", "minLength": 1},
     "pinned_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
     "content_fingerprint": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "file_count": {"type": "integer", "minimum": 75, "maximum": 250},
     "label_version": {"type": "string", "minLength": 1},
     "counting_rules_version": {"type": "string", "minLength": 1},
     "review_status": {
       "enum": ["PENDING_HUMAN_REVIEW", "APPROVED"]
-    }
+    },
+    "license_status": {"enum": ["PENDING", "APPROVED", "REJECTED"]},
+    "provenance_status": {"enum": ["PENDING", "APPROVED", "REJECTED"]}
   }
 }

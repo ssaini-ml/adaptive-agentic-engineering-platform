@@ -171,6 +171,7 @@ def list_agent_profiles() -> list[AgentProfileResponse]:
             status=profile.status.value,
             input_schema=profile.input_schema,
             output_schema=profile.output_schema,
+            required_payload_keys=list(profile.required_payload_keys),
             permissions=[permission.value for permission in profile.permissions],
             required_gates=list(profile.required_gates),
             max_model_calls=profile.max_model_calls,
@@ -178,6 +179,9 @@ def list_agent_profiles() -> list[AgentProfileResponse]:
             command_access=profile.command_access,
             source_write_access=profile.source_write_access,
             secret_access=profile.secret_access,
+            network_access=profile.network_access,
+            external_side_effect_access=profile.external_side_effect_access,
+            approval_authority=profile.approval_authority,
             profile_hash=profile.profile_hash,
         )
         for profile in m4_agent_profiles()

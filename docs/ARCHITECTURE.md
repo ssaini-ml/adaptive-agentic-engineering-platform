@@ -79,8 +79,9 @@ requires, in addition: fixture corpora expanded to their §3 target sizes, two
 independent human reviewers plus adjudication
 ([evaluation/HUMAN_REVIEW_GUIDE.md](../evaluation/HUMAN_REVIEW_GUIDE.md)), a
 licensed holdout repository evaluated at the release boundary, and a named
-human approver's sign-off. `evaluation/review.json` is the source of truth for
-whether that happened — see the review-process PRs alongside this document.
+human approver's sign-off. `evaluation/review.json` records review and final
+approval, while the versioned baselines and `evaluation/holdout/` records supply
+the technical, corpus, and holdout evidence checked by the release workflow.
 
 ## Evaluation & human review
 
@@ -93,7 +94,7 @@ evaluation/
 ├── counting-rules/v1.md                                    what counts as a symbol/import/etc.
 ├── HUMAN_REVIEW_GUIDE.md                                    two-reviewer independent process
 ├── HOLDOUT_POLICY.md                                        release-only repository, hidden from dev
-└── review.json                                              real reviewer names + agreement only
+└── review.json                                              review, adjudication, versions + approval
 ```
 
 Two engineers label independently, without seeing platform predictions or each

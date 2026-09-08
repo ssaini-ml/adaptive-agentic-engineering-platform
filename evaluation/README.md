@@ -1,5 +1,11 @@
 # Evaluation Foundation
 
+For V0.1 release-candidate human validation, use
+[`HUMAN_REVIEW_GUIDE.md`](HUMAN_REVIEW_GUIDE.md). The latest locally observed
+automated closure evidence is recorded in
+[`V0_1_TECHNICAL_CLOSURE.md`](V0_1_TECHNICAL_CLOSURE.md); it does not replace
+independent review or holdout approval.
+
 Milestone 0 provides the measurement system used by every later release.
 
 The runner is language-neutral. Python structural fixtures and a Python,
@@ -15,7 +21,10 @@ fixtures/fx-fastapi        framework and route fixture
 fixtures/fx-messy          difficult static-analysis fixture
 fixtures/fx-polyglot       minority-language and adapter-coverage fixture
 HOLDOUT_POLICY.md          release-only generalisation policy
-review.json                human label-review status
+holdout-manifest.schema.json reviewed holdout-manifest contract
+holdout-result.schema.json release-only result contract
+review.json                review, adjudication, fixture-version, and approval status
+check_review_complete.py   complete V0.1 release-evidence gate
 baselines/milestone0.json  generated integrity baseline
 baselines/milestone0.trace.jsonl  execution, decision and verification trace
 baselines/milestone2a.json        language-profile gate report
@@ -140,3 +149,16 @@ No runner code change is required merely to discover a new fixture.
 The technical Milestone 0 foundation can pass automatically. Human agreement and
 holdout selection cannot be manufactured by code and remain explicit release
 sign-off tasks.
+
+At a release boundary, run:
+
+```bash
+make release-check
+```
+
+This command intentionally fails during normal development. It passes only when
+the reviewed fixture versions and statuses, release-scale corpus counts, all six
+technical baseline reports, holdout manifest/result, distinct reviewers,
+agreement, adjudication, and final approval are complete. A failing tag workflow
+reports an invalid release candidate; repository rules and release publication
+processes must also require that check because GitHub cannot retract a pushed tag.

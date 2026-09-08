@@ -6,7 +6,7 @@ services:
       POSTGRES_USER: adaptive
       POSTGRES_PASSWORD: adaptive
     ports:
-      - "5432:5432"
+      - "${AAEP_POSTGRES_PORT:-5432}:5432"
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U adaptive -d adaptive"]
       interval: 5s
@@ -17,4 +17,3 @@ services:
 
 volumes:
   adaptive_postgres_data:
-

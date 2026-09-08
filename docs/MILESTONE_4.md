@@ -137,7 +137,7 @@ docker compose up -d postgres
 cp -n .env.example .env
 python -m alembic upgrade head
 python -m pytest
-python -m ruff check backend tests
+make lint
 python -m adaptive_platform.qa.evaluation
 python -m uvicorn adaptive_platform.main:app --app-dir backend --reload
 ```
@@ -163,8 +163,9 @@ SQLite is used only by isolated tests and the disposable M4 fixture harness.
 - A licensed release-only holdout must be selected and evaluated.
 - Each proposed provider/model configuration must pass its own answer, trace,
   cost, and adversarial-output gates.
-- The minimal JSON review queue is implemented for abstentions and unresolved
-  references; a polished visual console remains a release-sign-off item.
+- JSON review queues are implemented for abstentions and unresolved references,
+  with a small local visual projection at `GET /review/ui`. The page can append
+  task feedback without mutating prior answers.
 - Additional ambiguity, conflict, budget-overflow, prompt-injection, race, and
   qualifier fixtures should be expanded before release sign-off.
 

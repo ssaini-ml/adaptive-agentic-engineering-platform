@@ -5,8 +5,14 @@
   "reviewers": [],
   "first_pass_agreement": null,
   "adjudication_completed": false,
+  "reviewed_fixtures": {},
+  "release_approval": {
+    "status": "PENDING",
+    "approver": null,
+    "approved_at": null,
+    "evidence_ref": null
+  },
   "notes": [
     "Machine-authored provisional labels must be independently reviewed by two engineers before V0.1 release sign-off."
   ]
 }
-

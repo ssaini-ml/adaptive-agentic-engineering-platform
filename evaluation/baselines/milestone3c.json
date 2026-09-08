@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "generated_at": "2026-09-06T12:37:07.794572+00:00",
+  "generated_at": "2026-09-08T08:46:02.576505+00:00",
   "milestone": "M3C_POSTGRESQL_FULL_TEXT_RETRIEVAL",
   "technical_status": "PASS",
   "human_label_review": "PENDING_HUMAN_REVIEW",

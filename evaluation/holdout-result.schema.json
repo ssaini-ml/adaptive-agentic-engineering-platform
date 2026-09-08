@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://adaptive-platform.local/schemas/holdout-result-v1.json",
+  "title": "V0.1 release-only holdout result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "fixture_id",
+    "technical_status",
+    "holdout_regression",
+    "evaluated_at",
+    "evidence_ref"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "fixture_id": {"type": "string", "pattern": "^fx-[a-z0-9-]+-holdout$"},
+    "technical_status": {"enum": ["PASS", "FAIL"]},
+    "holdout_regression": {"enum": ["PASS", "FAIL"]},
+    "evaluated_at": {"type": "string", "format": "date-time"},
+    "evidence_ref": {"type": "string", "minLength": 1}
+  }
+}

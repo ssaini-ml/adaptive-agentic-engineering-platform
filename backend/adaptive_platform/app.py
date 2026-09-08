@@ -6,6 +6,7 @@ from sqlalchemy.engine import Engine
 from sqlalchemy.orm import Session, sessionmaker
 
 from adaptive_platform.api.repositories import router as repository_router
+from adaptive_platform.api.review_ui import router as review_ui_router
 from adaptive_platform.api.tasks import router as task_router
 from adaptive_platform.config import Settings, get_settings
 from adaptive_platform.database import create_database_engine, create_session_factory
@@ -36,6 +37,7 @@ def create_app(
     application.state.extractor_registry = selected_registry
     application.include_router(repository_router)
     application.include_router(task_router)
+    application.include_router(review_ui_router)
 
     @application.get("/health", tags=["system"])
     async def health() -> dict[str, str]:

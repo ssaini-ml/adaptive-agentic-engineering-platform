@@ -1,7 +1,7 @@
 PYTHON ?= python
 PYTHONPATH ?= backend
 
-.PHONY: setup db-up migrate test lint evaluate evaluate-m0 evaluate-2a evaluate-2b evaluate-3ab evaluate-3c evaluate-4 run verify
+.PHONY: setup db-up migrate test lint evaluate evaluate-m0 evaluate-2a evaluate-2b evaluate-3ab evaluate-3c evaluate-4 release-check run verify
 
 setup:
 	$(PYTHON) -m pip install -e '.[dev]'
@@ -16,7 +16,7 @@ test:
 	$(PYTHON) -m pytest
 
 lint:
-	$(PYTHON) -m ruff check backend tests
+	$(PYTHON) -m ruff check backend tests evaluation/check_review_complete.py
 
 evaluate: evaluate-m0 evaluate-2a evaluate-2b evaluate-3ab evaluate-3c evaluate-4
 
@@ -37,6 +37,9 @@ evaluate-3c: migrate
 
 evaluate-4:
 	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m adaptive_platform.qa.evaluation
+
+release-check:
+	$(PYTHON) evaluation/check_review_complete.py
 
 run:
 	$(PYTHON) -m uvicorn adaptive_platform.main:app --app-dir backend --reload

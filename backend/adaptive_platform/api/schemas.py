@@ -318,6 +318,7 @@ class AgentProfileResponse(BaseModel):
     status: str
     input_schema: str
     output_schema: str
+    required_payload_keys: list[str]
     permissions: list[str]
     required_gates: list[str]
     max_model_calls: int
@@ -325,6 +326,9 @@ class AgentProfileResponse(BaseModel):
     command_access: bool
     source_write_access: bool
     secret_access: bool
+    network_access: bool
+    external_side_effect_access: bool
+    approval_authority: bool
     profile_hash: str
 
 

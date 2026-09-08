@@ -10,6 +10,11 @@ The core principle is:
 
 ## Current status
 
+The automated V0.1 closure record is available at
+[`evaluation/V0_1_TECHNICAL_CLOSURE.md`](evaluation/V0_1_TECHNICAL_CLOSURE.md).
+It is a technical-candidate record; development-fixture expansion, independent
+label review, holdout evaluation, and human release approval remain pending.
+
 | Milestone | Status |
 |---|---|
 | Milestone 0 — Evaluation foundation | Technical implementation complete |
@@ -352,7 +357,8 @@ complete decision trace at `GET /tasks/{task_id}/trace`. Human corrections are
 appended with `POST /tasks/{task_id}/feedback`. The Repository Analyst and
 Evidence Reviewer profiles are visible at `GET /agent-profiles`, but remain
 disabled until real holdout and provider-specific gates pass. `GET /review`
-returns the abstention and unresolved-reference queues. See the
+returns the abstention and unresolved-reference queues, and `GET /review/ui`
+provides their small local visual review surface. See the
 [Milestone 4 guide](docs/MILESTONE_4.md).
 
 ## Run tests
@@ -534,8 +540,10 @@ Before V0.1 release sign-off:
 1. Two engineers independently review the provisional fixture labels.
 2. Disagreements are adjudicated.
 3. Agreement metrics are recorded in `evaluation/review.json`.
-4. A licensed holdout repository is selected and labelled.
-5. The release candidate is evaluated against the holdout.
+4. Exact reviewed fixture versions and adjudication are recorded.
+5. A licensed holdout repository is selected and labelled.
+6. The release candidate is evaluated against the holdout.
+7. A named human records final approval and `make release-check` passes.
 
 ## Security principles
 
@@ -596,6 +604,9 @@ docker compose up -d postgres
 cp .env.example .env
 alembic upgrade head
 ```
+
+If local port `5432` is already occupied, set `AAEP_POSTGRES_PORT` and use the
+same port in `AAEP_DATABASE_URL` before starting the service.
 
 Edit `.env` and set `AAEP_ALLOWED_REPOSITORY_ROOTS` to the narrowest directory
 the API may scan. See [the Milestone 1 guide](docs/MILESTONE_1.md) for requests.

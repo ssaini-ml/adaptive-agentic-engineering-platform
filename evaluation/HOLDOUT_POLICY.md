@@ -25,3 +25,10 @@ independently labelling the release repository requires human ownership and lega
 review.
 
 The machine-readable contract is `holdout-manifest.schema.json`.
+
+At release time, store the reviewed manifest at `evaluation/holdout/manifest.json`
+and the release-only result at `evaluation/holdout/result.json`. The manifest also
+records `file_count`, `license_status`, and `provenance_status`; the result records
+`fixture_id`, `technical_status`, `holdout_regression`, `evaluated_at`, and a
+non-sensitive `evidence_ref`. The release-evidence workflow checks these records
+without exposing detailed holdout labels.

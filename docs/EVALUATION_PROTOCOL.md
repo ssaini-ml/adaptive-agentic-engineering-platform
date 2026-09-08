@@ -1,11 +1,14 @@
 # Evaluation Protocol
 
-**Protocol version 1.2**
+**Protocol version 1.3**
 
 ## Status
 
 This document is normative for Adaptive Agentic Engineering Platform V0.1.
 Changes require a version bump and a recorded rationale.
+
+Version 1.3 makes the previously approximate development-fixture size targets
+executable at the V0.1 release boundary and adds no new product capability claim.
 
 ## 1. Purpose
 
@@ -21,6 +24,11 @@ rule, denominator, and labelled corpus is not an acceptance gate.
 | `fx-fastapi` | ~180 files / ~1,200 symbols | routes, DI and realistic layering |
 | `fx-messy` | ~90 files | aliases, re-exports, dynamic and conditional behavior |
 | `fx-holdout` | 75–250 files | release-only generalisation check |
+
+For an enforceable V0.1 release boundary, the three Python development fixtures
+must reach at least 40 (`fx-small`), 180 (`fx-fastapi`), and 90 (`fx-messy`)
+inventoried files respectively. These minima make the target sizes executable;
+changing them requires a protocol version bump and recorded rationale.
 
 The repository initially contains compact seed implementations of the three
 development fixtures. Expand them toward the target sizes before the V0.1 release

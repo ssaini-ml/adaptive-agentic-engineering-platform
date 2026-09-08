@@ -671,6 +671,7 @@ GET  /tasks/{task_id}/trace
 POST /tasks/{task_id}/feedback
 GET  /agent-profiles
 GET  /review
+GET  /review/ui
 ```
 
 Impact analysis is introduced in V0.2.
@@ -882,7 +883,10 @@ authorization milestone is specified.
 
 `GET /review` returns the local abstention and unresolved-reference queues.
 Candidate rules report `DISABLED_UNTIL_V0.4`; they are not fabricated during
-M4. The endpoint is a minimal JSON review surface, not a production UI.
+M4. `GET /review/ui` returns a no-store, local HTML projection that loads those
+queues and can append task feedback through the existing append-only endpoint.
+It is a minimal review console, not a production administration interface, and
+must remain loopback-bound while the API is unauthenticated.
 
 ## 15. Errors
 

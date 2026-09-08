@@ -426,11 +426,14 @@ The first two model profiles are defined but deliberately disabled:
 
 | Profile | Required input | Output | Hard permission boundary | Current status |
 |---|---|---|---|---|
-| `repository-analyst-structural@1.0.0` | validated `query-contract-v1` and coverage-approved `context-package-v1` | `proposed-answer-v1` containing atomic claims and evidence references | no filesystem, commands, repository mutation, secrets, external side effects or tool-selected retrieval | `DISABLED` |
-| `evidence-reviewer-structural@1.0.0` | `proposed-answer-v1`, deterministic check results and the exact cited evidence projection | `claim-review-v1` for claims explicitly routed to model-assisted entailment | no retrieval widening, filesystem, commands, mutation, approval authority, secrets or external side effects | `DISABLED` |
+| `repository-analyst-structural@1.0.0` | `repository-analysis-request-v1` wrapping a validated `query-contract-v1` and coverage-approved `context-package-v1` | `proposed-answer-v1` containing atomic claims and evidence references | no filesystem, commands, repository mutation, secrets, external side effects or tool-selected retrieval | `DISABLED` |
+| `evidence-reviewer-structural@1.0.0` | `claim-review-request-v1` wrapping `proposed-answer-v1`, deterministic check results and the exact cited evidence projection | `claim-review-v1` for claims explicitly routed to model-assisted entailment | no retrieval widening, filesystem, commands, mutation, approval authority, secrets or external side effects | `DISABLED` |
 
 The model gateway, not either profile, owns provider connectivity and must expose
-only the admitted typed artifact. A provider call cannot add evidence, change a
+only the admitted typed artifact. The gateway boundary rejects a missing wrapper
+field, mismatched schema or content hash, missing passing gate evidence references,
+incomplete provider metadata, or invalid token counts before accepting a result.
+A provider call cannot add evidence, change a
 coverage decision, select a workflow edge or mark its own claim valid. The
 deterministic validator and finalizer remain authoritative even after profiles
 are enabled.

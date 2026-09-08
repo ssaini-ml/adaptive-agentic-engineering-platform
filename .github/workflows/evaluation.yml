@@ -29,6 +29,7 @@ jobs:
         with:
           python-version: "3.12"
       - run: python -m pip install -e '.[dev]'
+      - run: python -m ruff check backend tests evaluation/check_review_complete.py
       - run: pytest
       - run: python -m adaptive_platform.evaluation.runner
       - run: python -m adaptive_platform.languages.evaluation
@@ -36,3 +37,4 @@ jobs:
       - run: python -m adaptive_platform.retrieval.evaluation
       - run: python -m alembic upgrade head
       - run: python -m adaptive_platform.retrieval.full_text_evaluation
+      - run: python -m adaptive_platform.qa.evaluation

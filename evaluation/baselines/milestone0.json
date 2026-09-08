@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "generated_at": "2026-09-05T20:15:35.293759+00:00",
+  "generated_at": "2026-09-08T08:40:10.048604+00:00",
   "milestone": "M0_EVALUATION_FOUNDATION",
   "technical_status": "PASS",
   "human_label_review": "PENDING_HUMAN_REVIEW",
@@ -78,8 +78,8 @@
       "symbol_labels": 13,
       "import_labels": 5,
       "route_labels": 0,
-      "question_labels": 3,
-      "answerable_questions": 2,
+      "question_labels": 4,
+      "answerable_questions": 3,
       "unanswerable_questions": 1,
       "label_status": "PROVISIONAL_HUMAN_REVIEW_REQUIRED"
     }

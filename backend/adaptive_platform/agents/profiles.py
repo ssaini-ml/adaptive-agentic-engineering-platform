@@ -34,6 +34,7 @@ class AgentProfile:
     status: AgentStatus
     input_schema: str
     output_schema: str
+    required_payload_keys: tuple[str, ...]
     permissions: tuple[AgentPermission, ...]
     required_gates: tuple[str, ...]
     max_model_calls: int
@@ -41,6 +42,9 @@ class AgentProfile:
     command_access: bool = False
     source_write_access: bool = False
     secret_access: bool = False
+    network_access: bool = False
+    external_side_effect_access: bool = False
+    approval_authority: bool = False
 
     @property
     def profile_hash(self) -> str:
@@ -54,10 +58,19 @@ REPOSITORY_ANALYST = AgentProfile(
     version="1.0.0",
     role=AgentRole.REPOSITORY_ANALYST,
     status=AgentStatus.DISABLED,
-    input_schema="context-package-v1",
+    input_schema="repository-analysis-request-v1",
     output_schema="proposed-answer-v1",
+    required_payload_keys=("query_contract", "context_package"),
     permissions=(AgentPermission.CONTEXT_PACKAGE_READ, AgentPermission.MODEL_GATEWAY_CALL),
-    required_gates=("coverage_ready", "provider_specific_eval", "human_holdout_review"),
+    required_gates=(
+        "coverage_ready",
+        "provider_specific_eval",
+        "false_confident_answer_rate",
+        "read_only_boundary",
+        "context_boundary",
+        "model_interaction_trace",
+        "human_holdout_review",
+    ),
     max_model_calls=1,
 )
 
@@ -66,14 +79,23 @@ EVIDENCE_REVIEWER = AgentProfile(
     version="1.0.0",
     role=AgentRole.EVIDENCE_REVIEWER,
     status=AgentStatus.DISABLED,
-    input_schema="proposed-answer-v1+evidence-refs-v1",
-    output_schema="review-opinion-v1",
+    input_schema="claim-review-request-v1",
+    output_schema="claim-review-v1",
+    required_payload_keys=("proposed_answer", "deterministic_checks", "cited_evidence"),
     permissions=(
         AgentPermission.PROPOSED_ANSWER_READ,
         AgentPermission.EVIDENCE_REFERENCE_READ,
         AgentPermission.MODEL_GATEWAY_CALL,
     ),
-    required_gates=("deterministic_validation_complete", "human_holdout_review"),
+    required_gates=(
+        "deterministic_validation_complete",
+        "provider_specific_eval",
+        "false_confident_answer_rate",
+        "read_only_boundary",
+        "context_boundary",
+        "model_interaction_trace",
+        "human_holdout_review",
+    ),
     max_model_calls=1,
 )
 

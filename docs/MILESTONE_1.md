@@ -25,6 +25,9 @@ cp .env.example .env
 alembic upgrade head
 ```
 
+The host port defaults to `5432`. When that port is occupied, set
+`AAEP_POSTGRES_PORT` and use the same port in `AAEP_DATABASE_URL`.
+
 Set `AAEP_ALLOWED_REPOSITORY_ROOTS` to the narrowest directory containing the
 repositories the platform may inspect.
 

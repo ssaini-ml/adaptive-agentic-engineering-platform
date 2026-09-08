@@ -529,8 +529,8 @@ approval queue nobody staffs.
 
 **V0.1 requires a minimal review surface.** M4A exposes JSON task, trace, agent
 profile, append-only feedback, abstention-queue, and unresolved-reference-queue
-endpoints. A polished visual page for these queues remains required before
-release sign-off:
+endpoints plus a small local visual projection of the two queues. The page can
+append task feedback without mutating prior answers:
 
 ```
 Abstentions        questions the system could not answer, and why

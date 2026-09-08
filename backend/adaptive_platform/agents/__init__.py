@@ -11,6 +11,7 @@ from adaptive_platform.agents.profiles import (
 __all__ = [
     "EVIDENCE_REVIEWER",
     "REPOSITORY_ANALYST",
+    "AgentGateEvidence",
     "AgentHandoff",
     "AgentInvocationError",
     "AgentPermission",
@@ -23,6 +24,7 @@ __all__ = [
     "m4_agent_profiles",
 ]
 from adaptive_platform.agents.gateway import (
+    AgentGateEvidence,
     AgentHandoff,
     AgentInvocationError,
     ModelGateway,
